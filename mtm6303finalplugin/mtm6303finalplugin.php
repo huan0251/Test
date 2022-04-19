@@ -111,8 +111,8 @@ function get_slider_scripts()
  */
 function mtm63030finalplugin_bulid_slider()
 {
-    wp_enqueue_style('custom-gallery');
-    wp_enqueue_script('custom-gallery');
+    // wp_enqueue_style('custom-gallery');
+    // wp_enqueue_script('custom-gallery');
 
     $args = array(
     'post_type' => 'mtm6303slider',
@@ -129,8 +129,8 @@ function mtm63030finalplugin_bulid_slider()
     $the_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $type);
   ?>
   <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
+  <div class="mySlides">
+    <div class="numbertext"> i / 4</div>
     <!-- <img src="img-1.jpg" style="width:100%"> -->
         <?php
             echo '<img title="'.get_the_title().'" src="' . $the_image_url[0] . '" alt="'.get_the_title().'">'

@@ -63,8 +63,6 @@ function mtm6303final_setup() {
 	}
 	
 	
-    
-	
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -79,12 +77,14 @@ function mtm6303final_setup() {
 	// Enqueue Styles
 	//Use wp_enqueue_styles() functions to load the styles
 	// All styles
-	wp_enqueue_style('mtm6303final-main-styles', get_theme_file_uri('/assets/css/main.a3f694c0.css'), '', '1.0');
+	if(!is_admin()) {
+		wp_enqueue_style('mtm6303final-main-styles', get_theme_file_uri('/assets/css/main.a3f694c0.css'), '', '1.0');
 
-	// Use wp_enqueue_script() function to load the scripts
-	wp_enqueue_script( 'jquery', get_theme_file_uri( '/js/jquery.js' ), '', '1.0.0', true );
-	wp_enqueue_script('parallax', get_theme_file_uri('/js/parallax.min.js'), array('jquery'), '1.0.0', true);
-    wp_enqueue_script('bootstrap', get_theme_file_uri('/js/bootstrap.min.js'), array('jquery'), '1.0.0', true);
+		// Use wp_enqueue_script() function to load the scripts
+		wp_enqueue_script( 'jquery', get_theme_file_uri( '/js/jquery.js' ), '', '1.0.0', true );
+		wp_enqueue_script('parallax', get_theme_file_uri('/js/parallax.min.js'), array('jquery'), '1.0.0', true);
+		wp_enqueue_script('bootstrap', get_theme_file_uri('/js/bootstrap.min.js'), array('jquery'), '1.0.0', true);
+	}
 
 }
 

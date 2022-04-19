@@ -52,9 +52,9 @@
             $menu_items = mtm6303final_getnav("top");
             foreach ($menu_items as $menu_item){
               ?>
-            <li class=" <?php echo ($menu_item["active"])? "active" : "" ?> ">
-              <a href="<?php echo $menu_item["url"] ?>"><?php echo $menu_item["title"] ?>
-                <?php echo ($menu_item["active"])? '<span class="sr-only">(current)</span>' : "" ?>
+            <li >
+              <a class=" <?php echo ($menu_item["active"])? "active" : "" ?> " href="<?php echo $menu_item["url"] ?>">
+                <?php echo $menu_item["title"] ?>
               </a>
             </li>
             <?php
